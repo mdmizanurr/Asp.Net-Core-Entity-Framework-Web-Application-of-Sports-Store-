@@ -1,0 +1,19 @@
+﻿@using SportsStore.Models
+@{ 
+    Layout = "_Layout";
+}
+
+@model IEnumerable<Product>
+
+@foreach (var p in Model)
+{
+    <div>
+        <h1>@p.Name</h1>
+        @p.Description
+        <h4>Price: BDT @p.Price.ToString()</h4>
+    </div>
+    <p> </p>
+
+
+}
+<h4></h4>
