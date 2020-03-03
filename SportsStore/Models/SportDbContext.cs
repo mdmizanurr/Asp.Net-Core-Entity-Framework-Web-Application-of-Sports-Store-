@@ -8,7 +8,11 @@ namespace SportsStore.Models
 {
     public class SportDbContext : DbContext
     {
-          public SportDbContext(DbContextOptions<SportDbContext> options) : base(options) { }
+        public SportDbContext()
+        {
+        }
+
+        public SportDbContext(DbContextOptions<SportDbContext> options) : base(options) { }
 
         //private const string ConnectionString = @"Server=MIZAN\\MIZANSQL;Database=SportsStore;Trusted_Connection=True";
 
@@ -20,6 +24,9 @@ namespace SportsStore.Models
 
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Service> Services { get; set; }
+
 
 
 

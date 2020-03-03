@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Service>
+
+
+@{
+    Layout = "_AdminLayout";
+}
+
+
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h5 class="display-4 text-center font-weight-bold btn-success">Service Ticket</h5>
+
+        <table class="table table-striped table-bordered table-sm">
+            <thead class="thead-dark ">
+                <tr class="text-center font-weight-bold">
+                    <th>Order Number</th>
+                    <th>Receive Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            @foreach (Service p in Model)
+            {
+                <tr class="text-center">
+                    <td>@p.OrderNumber</td>
+                    <td>@p.ReciveDate</td>
+                    <td>@p.Status</td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>
+

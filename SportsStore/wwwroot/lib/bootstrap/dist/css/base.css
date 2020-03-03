@@ -1,0 +1,53 @@
+nav{
+  /*margin-top: 1em;*/
+}
+
+img{
+  
+  background-size: cover;
+}
+
+  section#intro-header .wrap-headline {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+
+footer {
+    background-color: #000000;
+    color: #808080;
+    margin-top: 3em;
+}
+
+footer h5,
+footer img {
+    margin-top: 5em;
+    font-weight: bold;
+}
+
+footer address {
+    margin-top: 5em;
+    margin-bottom: 5em;
+    color: #5a5a5a;
+}
+
+footer ul{
+    margin-bottom: 5em;
+}
+
+footer address strong{
+    color: #adadad;
+    display: block;
+    padding-bottom: 0.62em;
+}
+
+footer a {
+    font-weight: 300;
+    color: #5a5a5a;
+}
+
+
+ .table-service{
+  padding-left: 10px;
+  padding-right: 100px;
+}

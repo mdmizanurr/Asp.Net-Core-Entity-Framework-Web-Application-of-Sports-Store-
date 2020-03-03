@@ -1,19 +1,34 @@
-﻿@using SportsStore.Models
-@{ 
+﻿@model ProductListViewModel
+
+@{
     Layout = "_Layout";
 }
-
-@model IEnumerable<Product>
-
-@foreach (var p in Model)
+<br />
+@foreach (var p in Model.Products)
 {
-    <div>
-        <h1>@p.Name</h1>
-        @p.Description
-        <h4>Price: BDT @p.Price.ToString()</h4>
-    </div>
-    <p> </p>
-
+    @await Html.PartialAsync("ProductSummary", p)
 
 }
-<h4></h4>
+
+
+<div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-primary" page-class-selected="btn-secondary"
+     page-url-category="@Model.CurrentCategory"
+     class="btn-group pull-right m-1">
+</div>
+
+
+
+
+<!--Test Area Begin-->
+@*<div class="card-columns">
+
+        @foreach (var p in Model.Products)
+        {
+            <div class="card">
+                <div class="card-title">
+                    @await Html.PartialAsync("ProductSummary", p)
+                </div>
+            </div>
+        }
+    </div>*@
