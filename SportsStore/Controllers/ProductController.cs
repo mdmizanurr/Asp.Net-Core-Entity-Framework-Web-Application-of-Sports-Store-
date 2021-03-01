@@ -12,30 +12,17 @@ namespace SportsStore.Controllers
     {
         private IProductRepository repository;
 
-
-
-        public int PageSize = 4;
+        public int PageSize = 2;
 
         public ProductController(IProductRepository repo)
         {
             repository = repo;
-            
-            
         }
-
 
         public IActionResult Index()
         {
             return View();
         }
-
-
-        //public IActionResult List(int productPage = 1) => View(repository.Products.OrderBy
-        //    (p => p.ProductID).Skip((productPage - 1) * PageSize).Take(PageSize));
-
-
-
-
 
         public IActionResult List(string category, int productPage = 1)
         {
@@ -59,11 +46,5 @@ namespace SportsStore.Controllers
            return View();
 
         }
-
-
-      //  public IActionResult Service() => View(_repo.Services);
-
-
-
     }
 }

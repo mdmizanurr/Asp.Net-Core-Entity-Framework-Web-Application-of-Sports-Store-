@@ -3,18 +3,20 @@
 
 <div class="">
 
-    @if (Model.Lines.Count() > 0)
-    {
-        <small class="navbar-text">
-            <b> |  @Model.Lines.Sum(x => x.Quantity) item(s) </b>
-
-            <strong> @Model.ComputeTotalValue().ToString() </strong>
-        </small>
-    }
-
-    <a class="btn btn-sm btn-secondary navbar-btn" asp-controller="Cart" asp-action="Index"
+    
+    <a class="btn btn-sm btn-outline-primary navbar-btn" asp-controller="Cart" asp-action="Index"
        asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
-        <i class="fas fa-shopping-cart"></i>
+        <i class="fas fa-shopping-cart alert-danger">
+            @if (Model.Lines.Count() > 0)
+            {
+                <span class="navbar-text text-sm-right alert-light">
+                    <b>   @Model.Lines.Sum(x => x.Quantity) item(s) </b>
+
+                    <strong> @Model.ComputeTotalValue().ToString() </strong>
+                </span>
+            }
+
+        </i>
     </a>
 
 </div>
