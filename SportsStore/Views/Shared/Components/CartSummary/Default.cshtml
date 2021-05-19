@@ -2,19 +2,18 @@
 
 
 <div class="">
-
-    
+    <b class="text-light">Cart</b> 
     <a class="btn btn-sm btn-outline-primary navbar-btn" asp-controller="Cart" asp-action="Index"
        asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
         <i class="fas fa-shopping-cart alert-danger">
             @if (Model.Lines.Count() > 0)
             {
                 <span class="navbar-text text-sm-right alert-light">
-                    <b>   @Model.Lines.Sum(x => x.Quantity) item(s) </b>
-
+                    <b>@Model.Lines.Sum(x => x.Quantity) item(s) </b>
                     <strong> @Model.ComputeTotalValue().ToString() </strong>
                 </span>
             }
+          
 
         </i>
     </a>

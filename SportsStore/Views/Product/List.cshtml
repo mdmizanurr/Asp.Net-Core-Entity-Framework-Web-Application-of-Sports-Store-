@@ -4,31 +4,39 @@
     Layout = "_Layout";
 }
 <br />
-@foreach (var p in Model.Products)
-{
-    @await Html.PartialAsync("ProductSummary", p)
-
-}
 
 
-<div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
-     page-class="btn" page-class-normal="btn-primary" page-class-selected="btn-secondary"
-     page-url-category="@Model.CurrentCategory"
-     class="btn-group pull-right m-1">
-</div>
+<div class="container">
+    
 
+              
 
+                    <div class="row">
+                        <div class="row row-cols-1 row-cols-lg-2 row-cols-md-2">
 
+                            @foreach (var p in Model.Products)
+                            {
+                                <div class="card-group">
+                                    <div class="card">
+                                        
+                                        @await Html.PartialAsync("ProductSummary", p)
+                                    </div>
+                                    </div>
+                                    }
 
-<!--Test Area Begin-->
-@*<div class="card-columns">
+                                </div>
 
-        @foreach (var p in Model.Products)
-        {
-            <div class="card">
-                <div class="card-title">
-                    @await Html.PartialAsync("ProductSummary", p)
+                            </div>
+
                 </div>
-            </div>
-        }
-    </div>*@
+
+
+    <div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
+         page-class="btn" page-class-normal="btn-primary" page-class-selected="btn-secondary"
+         page-url-category="@Model.CurrentCategory"
+         class="btn-group pull-right m-1">
+    </div>
+
+
+
+

@@ -20,9 +20,10 @@ namespace SportsStore.Controllers
     
         public IActionResult Index(string returnUrl)
         {
+        
             return View(new CartIndexViewModel
             {
-                Cart =GetCart(),
+                Cart = GetCart(),
                 ReturnUrl = returnUrl
             });
         }

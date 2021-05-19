@@ -69,7 +69,7 @@ namespace SportsStore
                 routes.MapRoute(
                     name: null,
                     template: "Page{productPage:int}",
-                    defaults: new { Controller = "Product", action = "List", productPage =1 });
+                    defaults: new { Controller = "Product", action = "List", productPage = 1 });
 
 
                 routes.MapRoute(
@@ -79,7 +79,7 @@ namespace SportsStore
 
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Product}/{action=Index}/{id?}");
+                    template: "{controller=Product}/{action=List}/{id?}");
             });
 
             SeedData.EnsureAdd(app);

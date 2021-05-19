@@ -13,6 +13,8 @@
         </tr>
     </thead>
     <tbody>
+     
+
         @foreach (var line in Model.Cart.Lines)
         {
             <tr>
@@ -32,7 +34,6 @@
             </tr>
 
         }
-
     </tbody>
     <tfoot>
         <tr>
@@ -44,5 +45,8 @@
 
 <div class="text-md-center">
     <a class="btn btn-primary" asp-controller="Product" asp-action="List">Continue Shoping</a>
-    <a class="btn btn-info" asp-action="Checkout" asp-controller="Order">Checkout</a>
-</div>
+    @if (Model.Cart.Lines.Count() > 0)
+    {
+        <a class="btn btn-info" asp-action="Checkout" asp-controller="Order">Checkout</a>
+    }
+    </div>

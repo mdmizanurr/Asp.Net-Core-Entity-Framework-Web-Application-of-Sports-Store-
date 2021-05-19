@@ -12,16 +12,11 @@ namespace SportsStore.Controllers
     {
         private IProductRepository repository;
 
-        public int PageSize = 2;
+        public int PageSize = 6;
 
         public ProductController(IProductRepository repo)
         {
             repository = repo;
-        }
-
-        public IActionResult Index()
-        {
-            return View();
         }
 
         public IActionResult List(string category, int productPage = 1)
